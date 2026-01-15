@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { ThemeContext } from "./context/context.js";
-import Home from "./pages/Home/Home.jsx";
+import { Outlet } from "react-router";
+import Navbar from "./components/Navbar.jsx";
 
 const App = () => {
-    const [theme, setTheme] = useState("light");
 
     return (
-        <ThemeContext value={{ theme, setTheme }}>
-            <Home />
-        </ThemeContext>
+        <div>
+            <Navbar />
+            <Outlet />
+            Footer
+        </div>
     )
 };
 
