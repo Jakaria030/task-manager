@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
                 Component: TaskList,
             },
             {
-                path: "task-details",
+                path: "task-details/:todoId",
                 Component: TaskDetails
             }
         ]
