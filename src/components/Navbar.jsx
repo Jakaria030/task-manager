@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <header className="bg-white border-b border-gray-100 shadow-sm">
             <nav className="max-w-7xl mx-auto px-4 md:px-8">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between py-2">
                     <Link to={"/"} className="inline-block">
                         <div className="flex items-center gap">
                             <img className="size-20 p-2" src={logo} alt="Logo" />
@@ -17,7 +17,7 @@ const Navbar = () => {
 
                     <div className="flex items-center justify-between gap-8">
                         <IoMoonOutline className="text-3xl cursor-pointer text-gray-800" />
-                        <CTA>Task</CTA>
+                        <CTA>ALL TASKS</CTA>
                     </div>
                 </div>
             </nav>
