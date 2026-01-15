@@ -1,5 +1,6 @@
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { useNavigate } from "react-router";
+import PendingButton from "../components/PendingButton.jsx";
 
 const TaskList = () => {
     const navigate = useNavigate();
@@ -13,8 +14,8 @@ const TaskList = () => {
                             return (
                                 <div onClick={() => { navigate(`/task-details/${indx}`) }} key={indx} className="p-4 cursor-pointer rounded-lg shadow-sm text-center space-y-2 hover:shadow-lg">
                                     <div className="size-12 bg-violet-500 rounded-full border border-violet-500 text-white flex items-center justify-center justify-self-center font-bold">1</div>
-                                    <h4 className="text-md text-center text-gray-800 font-meium">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, pariatur.</h4>
-                                    <button onClick={(e) => { e.stopPropagation(); }} className="px-6 py-[1px] cursor-pointer rounded-full text-sm bg-yellow-500 text-gray-800" title="Make it DONE">PENDING</button>
+                                    <h6 className="text-md text-center text-gray-800 font-meium">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, pariatur.</h6>
+                                    <PendingButton />
                                 </div>
 
                             );
