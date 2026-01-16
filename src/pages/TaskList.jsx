@@ -8,7 +8,7 @@ import NotFoundTodo from "../components/NotFoundTodo.jsx";
 const TaskList = () => {
     const [pageNo, setPageNo] = useState(0);
     const [todos, setTodos] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
     const handlePage = (value) => {
@@ -47,13 +47,14 @@ const TaskList = () => {
                         <NotFoundTodo message="Todos Not Found!" />
                     ) : (
                         <>
+                            {/* all tasks */}
                             < div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                                 {
                                     todos.map((todo) => <TodoCard key={todo.id} todo={todo} />)
                                 }
                             </div >
 
-
+                            {/* pagination */}
                             <div className="flex items-center justify-center gap-5 mt-12">
                                 <button onClick={() => handlePage(-1)} className="cursor-pointer px-4 py-1 bg-violet-500 flex items-center justify-between gap-2 text-white rounded-sm"><BiSolidLeftArrow className="text-xl text-white" /> PREV</button>
                                 <p className="w-32 text-center text-gray-800">PAGE NO: {pageNo + 1}</p>
