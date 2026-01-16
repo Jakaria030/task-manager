@@ -41,6 +41,13 @@ const TaskDetails = () => {
         return <LoadingSpin />;
     }
 
+    const handleStatus = (id) => {
+        setTodo({
+            ...todo,
+            completed: true
+        });
+    }
+
     return (
         <section className="bg-white">
             <div className="max-w-7xl mx-auto px-4 md:px-8 my-12 ">
@@ -53,7 +60,7 @@ const TaskDetails = () => {
                                 <img className="w-full h-[500px] border border-gray-100 rounded-t-lg" src={images[getRandomNumber(0, 5)]} alt="Task Details" />
                                 <div className="size-12 bg-violet-500 rounded-full border border-violet-500 text-white flex items-center justify-center justify-self-center font-bold">{todo.id}</div>
                                 <h6 className="text-md text-center text-gray-800 font-meium">{todo.title}</h6>
-                                <Badges isCompleted={todo.completed} />
+                                <Badges isCompleted={todo.completed} id={todo.id} handleStatus={handleStatus} />
                             </div>
                         )
                 }

@@ -11,7 +11,7 @@ const dSearch = debounce(handleFilterData, 500);
 const TaskList = () => {
     const [pageNo, setPageNo] = useState(0);
     const [searchText, setSearchText] = useState("");
-    const [todos, isLoading, isError] = useGetTodos(pageNo);
+    const [todos, setTodos, isLoading, isError] = useGetTodos(pageNo);
     const [filterTodos, setFilterTodos] = useState(null);
 
 
@@ -34,7 +34,6 @@ const TaskList = () => {
         dSearch(todos, setFilterTodos, value);
     }
 
-
     const displayTodos = filterTodos || todos;
 
     return (
@@ -53,7 +52,7 @@ const TaskList = () => {
                             {/* all tasks */}
                             < div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                                 {
-                                    displayTodos?.map((todo) => <TodoCard key={todo.id} todo={todo} />)
+                                    displayTodos?.map((todo) => <TodoCard key={todo.id} todo={todo} todos={todos} setTodos={setTodos} />)
                                 }
                             </div >
                         </>

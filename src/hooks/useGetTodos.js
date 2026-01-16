@@ -25,7 +25,7 @@ const useGetTodos = (pageNo) => {
         fetchTodos();
     }, [pageNo]);
 
-    return [todos, isLoading, isError];
+    return [todos, setTodos, isLoading, isError];
 };
 
 export default useGetTodos;
