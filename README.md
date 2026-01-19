@@ -1,16 +1,48 @@
-# React + Vite
+# Task Manager
+A modern React + Tailwind CSS project that demonstrates server-sides pagination, client-side search with debounce, light/dark mode, and in-memory status updates using the JSONPlaceholder Todos API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live URL
+[Visit Task Manager](https://explore-bangla-9f392.web.app/)
 
-Currently, two official plugins are available:
+## Preview
+![Project Image](public/task-manager.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- React + Vite + Tailwind CSS
+- Server-side Pagination using _start & _limit
+- Debounce search on todos title (Client-side filter)
+- Light/Dark mode (Context API)
+- Todo details page (React router)
+- Status update (In-memory only)
+- Custom data fetch (Hook)
+- Clean folder structure
 
-## React Compiler
+## API Used
+1. For fetch single page todos
+    ```bash
+    https://jsonplaceholder.typicode.com/todos?_start={start}&_limit={limit}
+    ```
+2. For fetch single todo
+    ```bash
+    https://jsonplaceholder.typicode.com/todos/:id
+    ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
+Follow these steps to set up and run the project locally:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Jakaria030/task-manager.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd task-manager
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
