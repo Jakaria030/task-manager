@@ -19,8 +19,6 @@ export const debounce = (fn, delay) => {
 };
 
 
-export const handleFilterData = (todos, setTodos, searchText) => {
-    const filterTodos = todos.filter((todo) => todo.title.toLowerCase().includes(searchText.toLowerCase()));
-
-    setTodos(filterTodos);
-}
+export const handleSetSearchTerm = (onSetSearchTerm, searchText) => {
+    onSetSearchTerm(searchText);
+};
