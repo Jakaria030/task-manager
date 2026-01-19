@@ -8,6 +8,11 @@ import { CiLight } from "react-icons/ci";
 const Navbar = () => {
     const { theme, setTheme } = useTheme();
 
+    const handleTheme = (mode) => {
+        setTheme(mode);
+        localStorage.setItem("theme", mode);
+    }
+
     return (
         <header className={`${theme === "light" ? "bg-white border-gray-100" : "bg-[#242424] border-gray-900"}  border-b shadow-sm`}>
             <nav className="max-w-7xl mx-auto px-4 md:px-8">
@@ -21,7 +26,7 @@ const Navbar = () => {
 
                     <div className="flex items-center justify-between gap-8">
                         {
-                            theme === "light" ? (<IoMoonOutline onClick={() => setTheme("dark")} className={`text-3xl cursor-pointer ${theme === "light" ? "text-gray-800" : "text-white"} `} />) : (<CiLight onClick={() => setTheme("light")} className={`text-3xl cursor-pointer ${theme === " light" ? "text-gray-800" : "text-white"}`} />)
+                            theme === "light" ? (<IoMoonOutline onClick={() => handleTheme("dark")} className={`text-3xl cursor-pointer ${theme === "light" ? "text-gray-800" : "text-white"} `} />) : (<CiLight onClick={() => handleTheme("light")} className={`text-3xl cursor-pointer ${theme === " light" ? "text-gray-800" : "text-white"}`} />)
                         }
                         <CTA>ALL TASKS</CTA>
                     </div>
