@@ -2,7 +2,7 @@
 A modern React + Tailwind CSS project that demonstrates server-sides pagination, client-side search with debounce, light/dark mode, and in-memory status updates using the JSONPlaceholder Todos API.
 
 ## Live URL
-[Visit Task Manager](https://explore-bangla-9f392.web.app/)
+[Visit Task Manager](https://task-manager-pink-beta.vercel.app/)
 
 ## Preview
 ![Project Image](public/task-manager.png)
