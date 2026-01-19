@@ -15,7 +15,7 @@ const Navbar = () => {
                     <Link to={"/"} className="inline-block">
                         <div className="flex items-center gap-2">
                             <img className="size-20 p-2 border border-gray-200 rounded-md" src={logo} alt="Logo" />
-                            <h2 className="bg-linear-to-r from-green-500 to-violet-500 bg-clip-text text-2xl font-extrabold text-transparent">Task Manager</h2>
+                            <h2 className="bg-linear-to-r from-green-500 to-violet-500 bg-clip-text text-2xl font-extrabold text-transparent hidden sm:inline">Task Manager</h2>
                         </div>
                     </Link>
 
