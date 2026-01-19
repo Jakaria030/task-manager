@@ -1,5 +1,4 @@
-import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { TOTAL_PAGE } from "../utils/utils.js";
 import TodoCard from "../components/TodoCard.jsx";
 import LoadingSkeleton from "../components/LoadingSkeleton.jsx";
@@ -7,6 +6,7 @@ import NotFoundTodo from "../components/NotFoundTodo.jsx";
 import useGetTodos from "../hooks/useGetTodos.js";
 import useTheme from "../hooks/useTheme.js";
 import SearchBox from "../components/SearchBox.jsx";
+import Pagination from "../components/Pagination.jsx";
 
 const TaskList = () => {
     const { theme } = useTheme();
@@ -44,11 +44,7 @@ const TaskList = () => {
                     )
                 }
                 {/* pagination */}
-                <div className="flex items-center justify-center gap-5 mt-12">
-                    <button onClick={() => handlePage(-1)} className="cursor-pointer px-4 py-1 bg-violet-500 flex items-center justify-between gap-2 text-white rounded-sm"><BiSolidLeftArrow className="text-xl text-white" /> PREV</button>
-                    <p className={`w-32 text-center  ${theme === "light" ? "text-gray-800" : "text-white"}`}>PAGE NO: {pageNo + 1}</p>
-                    <button onClick={() => handlePage(1)} className="cursor-pointer px-4 py-1 bg-violet-500 flex items-center justify-between gap-2 text-white rounded-sm">NEXT <BiSolidRightArrow className="text-xl text-white" /></button>
-                </div>
+                <Pagination onHandlePage={handlePage} pageNo={pageNo} />
             </div>
         </section>
     )
