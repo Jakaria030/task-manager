@@ -9,11 +9,13 @@ import { useEffect, useState } from "react";
 import LoadingSpin from "../components/LoadingSpin.jsx";
 import { getRandomNumber } from "../utils/utils.js";
 import NotFoundTodo from "../components/NotFoundTodo.jsx";
+import useTheme from "../hooks/useTheme.js";
 
 const images = [image1, image2, image3, image4, image5];
 
 
 const TaskDetails = () => {
+    const { theme } = useTheme();
     const { todoId } = useParams();
     const [todo, setTodo] = useState({});
     const [isLoading, setIsLoading] = useState(true);
@@ -49,17 +51,17 @@ const TaskDetails = () => {
     }
 
     return (
-        <section className="bg-white">
+        <section className={`${theme === "light" ? "bg-white" : "bg-[#242424]"}`}>
             <div className="max-w-7xl mx-auto px-4 md:px-8 my-12 ">
                 {
                     (isError || !todo) ?
                         (
                             <NotFoundTodo message="Todo Not Found!" />
                         ) : (
-                            <div className="max-w-3xl mx-auto rounded-lg shadow-md text-center space-y-4 pb-8">
+                            <div className={`${theme === "light" ? "bg-white" : "bg-[#292929]"} max-w-3xl mx-auto rounded-lg shadow-md text-center space-y-4 pb-8`}>
                                 <img className="w-full h-[500px] border border-gray-100 rounded-t-lg" src={images[getRandomNumber(0, 5)]} alt="Task Details" />
                                 <div className="size-12 bg-violet-500 rounded-full border border-violet-500 text-white flex items-center justify-center justify-self-center font-bold">{todo.id}</div>
-                                <h6 className="text-md text-center text-gray-800 font-meium">{todo.title}</h6>
+                                <h6 className={`${theme === "light" ? "text-gray-800" : "text-white"} text-md text-center font-meium`}>{todo.title}</h6>
                                 <Badges isCompleted={todo.completed} id={todo.id} handleStatus={handleStatus} />
                             </div>
                         )
